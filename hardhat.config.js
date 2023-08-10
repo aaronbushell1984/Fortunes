@@ -32,40 +32,40 @@ module.exports = {
     solidity: {
         compilers: [
             {
-                version: "0.8.7",
+                version: "0.8.7"
             },
             {
-                version: "0.6.6",
+                version: "0.6.6"
             },
             {
-                version: "0.4.24",
-            },
-        ],
+                version: "0.4.24"
+            }
+        ]
     },
     defaultNetwork: "hardhat",
     networks: {
         hardhat: {
             hardfork: "merge",
-            chainId: 31337,
+            chainId: 31337
         },
         localhost: {
-            chainId: 31337,
+            chainId: 31337
         },
         fuji: {
             url: FUJI_RPC_URL,
             accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
-            chainId: 43113,
-        },
+            chainId: 43113
+        }
     },
     etherscan: {
         // yarn hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
-        apiKey: BLOCKEXPLORER_KEY,
+        apiKey: BLOCKEXPLORER_KEY
     },
     gasReporter: {
         enabled: REPORT_GAS,
         currency: "USD",
         outputFile: "gas-report.txt",
-        noColors: true,
+        noColors: true
         // coinmarketcap: process.env.COINMARKETCAP_API_KEY,
     },
     contractSizer: {
@@ -75,16 +75,16 @@ module.exports = {
             "AutomationCounter",
             "NFTFloorPriceConsumerV3",
             "PriceConsumerV3",
-            "RandomNumberConsumerV2",
-        ],
+            "RandomNumberConsumerV2"
+        ]
     },
     paths: {
         sources: "./contracts",
         tests: "./tests",
         cache: "./build/cache",
-        artifacts: "./build/artifacts",
+        artifacts: "./build/artifacts"
     },
     mocha: {
-        timeout: 200000, // 200 seconds max for running tests
-    },
+        timeout: 200000 // 200 seconds max for running tests
+    }
 }

@@ -1,6 +1,9 @@
 # vscode
 .vscode
 
+# Jetbrains
+.idea
+
 # hardhat
 artifacts
 cache
@@ -18,8 +21,6 @@ typechain
 *.apk
 *.ap_
 *.aab
-
-
 
 # Version control
 vcs.xml
