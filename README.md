@@ -1,4 +1,14 @@
-## PROJECT #2 Overview
+## Remix Setup
+
+Remixd installed as development dependency, to connect run:
+
+```bash
+npx remixd -s ~/WebstormProjects/Fortunes --remix-ide https://remix.ethereum.org/
+```
+
+---
+
+## PROJECT Overview Chainlink
 There are two contracts. We start with `FortuneTeller.sol` which uses [Chainlink VRF](https://docs.chain.link/vrf/v2/introduction/), and then do `FortuneSeeker.sol` which uses [Chainlink Automation](https://docs.chain.link/chainlink-automation/introduction/).  You can access the [Chainlink Documentation here](docs.chain.link).
 
 You will need to have the native token for the blockchain test network you use.  This project is configured to be deployed and run on the Avalanche Fuji testnet, but you can deploy the code on any EVM network that is [supported by Chainlink](https://docs.chain.link/chainlink-automation/supported-networks/)
