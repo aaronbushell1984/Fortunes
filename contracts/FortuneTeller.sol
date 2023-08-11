@@ -124,7 +124,8 @@ contract FortuneTeller is VRFConsumerBaseV2, ConfirmedOwner {
         return (request.isFulfilled, request.randomWords);
     }
 
-    // callback example
+    // callback example which the seeker will call to instigate the fortune telling
+    // Teller mandates that the seeker has a fulfillFortune function
     function seekFortune() external payable {
         // provides funds for callback to seeker
         require(msg.value >= 0.001 ether, "insufficient payment to fortune teller");

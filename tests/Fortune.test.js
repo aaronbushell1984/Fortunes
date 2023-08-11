@@ -106,7 +106,7 @@ const addEtherToContractAt = async (address, etherValBigNum) => {
                       fortuneTellerContract.seekFortune({
                           value: ethers.utils.parseEther("0.000001"),
                       })
-                  ).to.be.revertedWith("Insufficient payment to the fortune teller")
+                  ).to.be.revertedWith("insufficient payment to fortune teller")
 
                   const contractBalance = await fortuneTellerContract.getContractBalance()
                   expect(contractBalance.toString()).to.equal("0")
@@ -119,7 +119,7 @@ const addEtherToContractAt = async (address, etherValBigNum) => {
                       fortuneTellerContract.seekFortune({
                           value: payment,
                       })
-                  ).to.be.revertedWith("No requests fulfilled as yet")
+                  ).to.be.revertedWith("no fortune available yet")
 
                   const contractBalance = await fortuneTellerContract.getContractBalance()
                   expect(contractBalance.toString()).to.equal("0")
@@ -192,14 +192,14 @@ const addEtherToContractAt = async (address, etherValBigNum) => {
                   // Act and Assert. Run performUpkeep without any funding in FortuneSeeker.
                   const checkData = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(""))
                   await expect(fortuneSeekerContract.performUpkeep(checkData)).to.be.revertedWith(
-                      "Upkeep conditions not met"
+                      "upkeep not needed"
                   )
 
                   // Surpass the time interval, but no funding still.
                   await time.increase(UPDATE_INTERVAL_SEC + 1)
 
                   await expect(fortuneSeekerContract.performUpkeep(checkData)).to.be.revertedWith(
-                      "Upkeep conditions not met"
+                      "upkeep not needed"
                   )
               })
 
